@@ -1,0 +1,27 @@
+# Requirements для Raspberry Pi 5 deployment
+# Установка на RPi: pip install -r requirements_rpi.txt
+
+# Core
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+pyyaml>=6.0
+
+# TensorFlow Lite Runtime (легковесная версия)
+tflite-runtime>=2.14.0  # Установить отдельно для ARM64
+
+# Google Coral Edge TPU
+pycoral>=2.0.0  # Требует libedgetpu
+tflite-support>=0.4.4
+
+# Camera Support (Raspberry Pi)
+picamera2>=0.3.12  # Для Pi Camera Module
+# v4l2-python3  # Для USB webcams (опционально)
+
+# Utils
+tqdm>=4.66.0
+psutil>=5.9.0  # Мониторинг системы
+
+# GPIO (опционально для индикаторов)
+# RPi.GPIO>=0.7.1
+# gpiozero>=2.0

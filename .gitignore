@@ -1,0 +1,91 @@
+# Ignore Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Dataset (большие файлы)
+dataset/raw/
+dataset/images/
+dataset/labels/
+dataset/augmented/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+
+# Models (большие файлы)
+models/*.pt
+models/*.onnx
+models/*.pb
+models/*.tflite
+*.weights
+*.pth
+
+# Training outputs
+training/runs/
+training/logs/
+*.log
+
+# Deployment
+deployment/logs/*.log
+deployment/videos/*.mp4
+deployment/videos/*.avi
+
+# TensorBoard
+runs/
+tensorboard/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Keep directory structure but ignore contents
+!dataset/raw/.gitkeep
+!dataset/images/train/.gitkeep
+!dataset/images/val/.gitkeep
+!dataset/images/test/.gitkeep
+!dataset/labels/train/.gitkeep
+!dataset/labels/val/.gitkeep
+!dataset/labels/test/.gitkeep
+!models/.gitkeep
+!training/runs/.gitkeep
+!deployment/logs/.gitkeep
+!deployment/videos/.gitkeep

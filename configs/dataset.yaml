@@ -1,0 +1,35 @@
+# Конфигурация датасета для YOLO
+# Путь к корневой директории датасета
+path: ../dataset  # относительно этого файла
+
+# Пути к train/val/test данным (относительно path)
+train: images/train
+val: images/val
+test: images/test
+
+# Классы дорожных знаков
+# ВАЖНО: Замените эти классы на ваши реальные категории знаков
+names:
+  0: stop_sign
+  1: speed_limit_30
+  2: speed_limit_50
+  3: speed_limit_60
+  4: speed_limit_70
+  5: speed_limit_80
+  6: speed_limit_100
+  7: speed_limit_120
+  8: no_entry
+  9: yield_sign
+  10: priority_road
+  11: no_overtaking
+  12: parking
+  13: pedestrian_crossing
+  14: children_crossing
+  15: bicycle_crossing
+  16: slippery_road
+  17: construction
+  18: traffic_light
+  19: roundabout
+
+# Количество классов
+nc: 20  # обновите в соответствии с вашими данными

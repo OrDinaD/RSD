@@ -1,0 +1,48 @@
+# Конфигурация обучения YOLOv10n для распознавания дорожных знаков
+# Рекомендуется для обучения на GPU (Google Colab, AWS, локальная станция)
+
+# Модель
+model: yolov10n.pt  # Nano версия для edge deployment
+
+# Данные
+data: configs/dataset.yaml
+project: training/runs
+name: traffic_signs_yolov10n
+
+# Гиперпараметры
+epochs: 200
+batch: 16  # Увеличить до 32 если хватает GPU памяти
+imgsz: 640  # Можно снизить до 416 для более быстрого inference
+patience: 50  # Early stopping
+
+# Оптимизация
+optimizer: AdamW
+lr0: 0.001
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+# Аугментация
+hsv_h: 0.015  # Изменение оттенка
+hsv_s: 0.7    # Изменение насыщенности
+hsv_v: 0.4    # Изменение яркости
+degrees: 10.0  # Поворот +/- градусов
+translate: 0.1 # Сдвиг
+scale: 0.5     # Масштаб
+shear: 0.0     # Искажение
+perspective: 0.0
+flipud: 0.0    # Вертикальное отражение (не рекомендуется для знаков)
+fliplr: 0.5    # Горизонтальное отражение
+mosaic: 1.0    # Мозаика аугментация
+mixup: 0.0     # Mixup аугментация
+
+# Валидация
+val: True
+save: True
+save_period: 10  # Сохранять каждые N эпох
+plots: True
+verbose: True
+
+# Hardware
+device: 0  # GPU ID (0, 1, 2...) или 'cpu' для CPU
+workers: 8

@@ -1,0 +1,33 @@
+# Requirements для обучения и подготовки данных (на GPU станции)
+# Установка: pip install -r requirements.txt
+
+# Core ML Framework
+ultralytics>=8.3.0  # YOLOv10 support
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Data Processing
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Augmentation
+albumentations>=1.3.0
+imgaug>=0.4.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Model Conversion & Optimization
+onnx>=1.15.0
+onnxruntime>=1.16.0
+tf2onnx>=1.16.0
+tensorflow>=2.15.0
+
+# Utils
+tqdm>=4.66.0
+pyyaml>=6.0
+tensorboard>=2.15.0

@@ -1,0 +1,71 @@
+# Конфигурация для deployment на Raspberry Pi 5 с Google Coral TPU
+
+# Raspberry Pi настройки
+raspberry_pi:
+  model: "Raspberry Pi 5"
+  ram: "8GB"
+  os: "Raspberry Pi OS (64-bit)"
+  python_version: "3.11"
+
+# Камера
+camera:
+  type: "picamera2"  # или "usb_webcam"
+  resolution: [1920, 1080]  # 1080p
+  fps: 30
+  rotation: 0
+  hflip: false
+  vflip: false
+
+# Модель
+model:
+  format: "tflite"  # TensorFlow Lite для Edge TPU
+  path: "models/traffic_signs_yolov10n_edgetpu.tflite"
+  input_size: [640, 640]
+  confidence_threshold: 0.6  # Минимальная уверенность для детекции
+  iou_threshold: 0.45  # NMS threshold
+  max_detections: 50
+
+# Edge TPU
+edge_tpu:
+  enabled: true
+  device: "usb"  # USB Coral Accelerator
+  num_threads: 4
+
+# Inference
+inference:
+  target_fps: 20  # Целевой FPS
+  frame_skip: 1   # Обрабатывать каждый N-й кадр
+  preprocessing:
+    normalize: true
+    letterbox: true  # Сохранять aspect ratio
+
+# Визуализация
+visualization:
+  show_preview: true
+  display_fps: true
+  display_confidence: true
+  box_thickness: 2
+  font_scale: 0.6
+  color_mode: "bgr"  # или "rgb"
+
+# Логирование
+logging:
+  enable: true
+  log_level: "INFO"
+  save_detections: true
+  output_dir: "deployment/logs"
+  video_recording: false
+  video_output_dir: "deployment/videos"
+
+# Performance
+performance:
+  enable_thermal_monitoring: true
+  thermal_threshold: 75  # °C
+  enable_cpu_monitoring: true
+  stats_interval: 30  # секунд
+
+# Safety
+safety:
+  enable_distance_estimation: false
+  alert_on_detection: false
+  alert_sound: false
